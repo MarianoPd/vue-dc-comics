@@ -1,12 +1,14 @@
 <template>
-  <header class="container ">
-    <img src="../assets/img/dc-logo.png" alt="">
+  <header >
+    <div class="container ">
+      <img src="../assets/img/dc-logo.png" alt="">
     <ul>
       <li v-for="(item,index) in links" :key="index">
         <a :class="{active: item.current}" :href="item.url">{{item.text}}</a>
       </li>
       
     </ul>
+    </div>
   </header>
 </template>
 
@@ -77,8 +79,10 @@ export default {
   @import "../assets/style/mixins.scss";
   @import "../assets/style/vars.scss";
   header{
-    @include center(between);
     height: 120px;
+    .container{
+    @include center(between);
+    height: 100%;
     img{
       width: 80px;
     }
@@ -99,6 +103,7 @@ export default {
       }
 
     }
+  }
   }
 
 </style>
