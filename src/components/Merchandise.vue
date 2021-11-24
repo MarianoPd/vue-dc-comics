@@ -69,6 +69,8 @@ export default {
       height: 100%;
       li{
         @include center(align);
+        font-size: 15px;
+        width: calc(100% / 5);
         img{
           max-width: 50px;
           max-height: 50px;
