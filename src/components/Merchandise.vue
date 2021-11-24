@@ -4,7 +4,7 @@
       <ul>
         <li v-for="(item,index) in links" :key="index">
           <img :src="item.image" alt="">
-          <a :href="'../assets/img/' + item.image">{{item.text}}</a>
+          <a :href="item.image">{{item.text}}</a>
         </li>
       </ul>
     </div>
@@ -20,31 +20,31 @@ export default {
         links:[
           {
             link: '#',
-            image: "dc-logo.png",
+            image: require("../assets/img/buy-comics-digital-comics.png"),
             text: 'digital comics',
             current: false,
           },
           {
             link: '#',
-            image: '../assets/img/buy-comics-digital-comics.png',
+            image: require('../assets/img/buy-comics-merchandise.png'),
             text: 'dc merchandise',
             current: false,
           },
           {
             link: '#',
-            image: '../assets/img/buy-comics-digital-comics.png',
+            image: require('../assets/img/buy-comics-subscriptions.png'),
             text: 'subscription',
             current: false,
           },
           {
             link: '#',
-            image: '../assets/img/buy-comics-digital-comics.png',
+            image: require('../assets/img/buy-comics-shop-locator.png'),
             text: 'comic shop locator',
             current: false,
           },
           {
             link: '#',
-            image: '../assets/img/buy-comics-digital-comics.png',
+            image: require('../assets/img/buy-dc-power-visa.svg'),
             text: 'dc power visa',
             current: false,
           },
@@ -62,15 +62,21 @@ export default {
 
     .container{    
     color: white;
-    height: 150px;
+    height: 155px;
     ul{
-      @include center(evenly);
+      @include center(between);
       @include orizontal();
       height: 100%;
       li{
+        @include center(align);
+        img{
+          max-width: 50px;
+          max-height: 50px;
+        }
         a{
+          padding-left: 1rem;
           color: white;
-        text-transform: uppercase;
+          text-transform: uppercase;
         }
       }
     }
