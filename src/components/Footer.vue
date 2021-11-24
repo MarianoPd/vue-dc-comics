@@ -1,15 +1,16 @@
 <template>
-  <footer>
-
+  <footer class="container">
+    <h1>footer</h1>
   </footer>
 </template>
 
 <script>
+
 export default {
     name: 'Footer',
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>

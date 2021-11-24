@@ -25,12 +25,8 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import "./assets/style/vars.scss";
+  @import "./assets/style/utilities.scss";
+  @import "./assets/style/generals.scss";
+  @import "./assets/style/mixins.scss";
 </style>

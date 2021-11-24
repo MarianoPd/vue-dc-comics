@@ -1,16 +1,16 @@
 <template>
-  <section>
-
+  <section class="container">
+    <h1>merch</h1>
   </section>
 </template>
 
 <script>
-import MerchandiceVue from './Merchandice.vue'
+
 export default {
     name: 'Merchandise',
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>
