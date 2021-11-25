@@ -1,10 +1,15 @@
 <template>
   <header >
     <div class="container ">
-      <img src="../assets/img/dc-logo.png" alt="">
+      <img src="../assets/img/dc-logo.png" alt="dc-logo">
     <ul>
-      <li v-for="(item,index) in links" :key="index">
-        <a :class="{active: item.current}" :href="item.url">{{item.text}}</a>
+      <li 
+      v-for="(item,index) in links" :key="index"
+      :class="{active: index === activeLink}"
+      @click="activeLink = index">
+        <a :href="item.url">
+          {{item.text}}
+        </a>
       </li>
       
     </ul>
@@ -18,6 +23,7 @@ export default {
   name: 'Header',
   data(){
     return{
+      activeLink: 1,
       links:[
         {
           url:'#',
@@ -71,7 +77,8 @@ export default {
         },
     ]
     }
-  }
+  },
+  
 }
 </script>
 
@@ -97,7 +104,7 @@ export default {
         @include center(align);
         
         &:hover,
-        &.active{
+        &.active {
           border-bottom: 5px solid $primary-color-light;
         }
       }
