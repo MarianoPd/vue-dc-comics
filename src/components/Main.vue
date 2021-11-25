@@ -1,24 +1,66 @@
 <template>
   <main >
-    <div class="container">
-      <h1>  --&gt; Content goes here&lt;--  </h1>
-    </div>
+    <section class="jumbo">
+        <img src="../assets/img/jumbotron.jpg" alt="jumbotron">
+    </section>
+    
+    <section class="archive">
+      <div class="container">
+        <div class="blue label">
+          <h1>current series</h1>
+        </div>
+        <div class="sub-container">
+        <ComicCard 
+          v-for="(comic,index) in ComicData"
+          :key="index"
+          :thumb="comic.thumb"
+          :series="comic.series"
+         />
+      </div>
+      </div>
+      
+    </section>
+    
   </main>
 </template>
 
 <script>
-export default {
-    name: 'Main',
-}
+
+  import ComicCard from './ComicCard';
+  import ComicData from '../assets/data/dc-comics.json';
+
+  export default {
+      name: 'Main',
+      components:{
+        ComicCard,
+      },
+      data(){
+        return{
+          ComicData,
+        }
+      }
+  }
 </script>
 
 <style lang="scss" scoped>
   @import "../assets/style/mixins.scss";
   main{
-    @include center(align);
-    height: 135px;
-    color: white;
-    background-color: black;
-    padding-left: 50px ;
+    .jumbo{
+      max-height: 400px;
+      overflow: hidden;
+    }
+
+    .archive{
+      background-color: #1c1c1c;
+      .container{
+        .sub-container{
+          @include wrap();
+          width:100%;
+        }
+      }
+
+    }
+
   }
+    
 </style>

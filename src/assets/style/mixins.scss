@@ -21,3 +21,8 @@
     flex-direction: row;
     align-items: center;
 }
+
+@mixin wrap(){
+    display: flex;
+    flex-wrap: wrap;
+}
